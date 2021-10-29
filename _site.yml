@@ -17,4 +17,7 @@ navbar:
       href: https://github.com/zheyanliu99
 output:
   html_document:
-    theme: cosmo
+    theme: lumen
+    css: styles.css
+    lib_dir: site_libs
+    self_contained: no
