@@ -11,7 +11,7 @@
 
 
 
-<title>My awesome website</title>
+<title>Experience</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -29,14 +29,20 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119400399-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119400399-1');
+</script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -224,69 +230,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -294,16 +237,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -359,27 +292,28 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">My awesome website</h1>
+<h1 class="title toc-ignore">Experience</h1>
 
 </div>
 
 
-<div id="this-is-jeffs-awesome-website" class="section level1">
-<h1>This is Jeff’s awesome website</h1>
-<p><img src="https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif" /></p>
-<p>I can link to useful things like <a href="https://www.google.com/">google</a> and <a href="https://www.p8105.com">p8105</a></p>
-<p>I can make an extra page on my site and link to that. Here’s my <a href="about.html">about</a> page.</p>
-<div id="heres-ted" class="section level2">
-<h2>Here’s Ted</h2>
-<p>My cat’s name is Ted. He likes to be on the internet. Here he is:</p>
-<p><img src="images/ted.jpg" style="width:75%"></p>
+<p><link rel="stylesheet" href="academicons.css"/> <link rel="stylesheet" href="styles.css" type="text/css"></p>
+<div id="curve-registration" class="section level3">
+<h3>Curve Registration</h3>
+<p>I developed a method to <strong>register exponential family functional data</strong>, which was recently published in <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.12963">Biometrics</a>. Our methods are implemented in the <code>registr</code> package, a GitHub hosted <code>R</code> package you can download <a href="https://github.com/julia-wrobel/registr">here</a>.</p>
+<p>If each curve represents an observation for one subject, then <em>curve registration</em> refers to warping the domain (often time) of a set of curves so that the main features of each curve are aligned across subjects. An example with simulated data is below.</p>
+<p><br><img src="images/registration.png" alt="registration" style="width:75%"><br></p>
+<p><em>Warping functions</em> (center) are applied to the <em>unregistered curves</em> (left) to get <em>registered</em> curves (right). The <em>exponential family</em> part comes in because not all functional observations are Gaussian or continuous. Our approach to registration allows alignment of data that is discrete as well as continuous.</p>
+<p>Below our method is applied to accelerometer data where each subject’s binary activity (active vs. not active) is collected at every minute over 24 hours. Periods of inactivity are colored in light blue and periods of activity are colored in dark blue. Applying our registration technique to the activity data pulls out patterns in physical activity.</p>
+<p><br><img src="images/binaryRegistration.png" alt="binary registration" style="width:75%"><br></p>
 </div>
+<div id="interactive-visualization-of-functional-data-analyses" class="section level3">
+<h3>Interactive visualization of functional data analyses</h3>
+<p>I also have software for communicating the results of functional data analyses. I made a poster on this work for the 2017 Women in Statistics and Data Science (WSDS) conference, which you can access <a href="Downloads/output/flexdashboard-poster.html">here</a>.</p>
 </div>
 
 
 
-</div>
-</div>
 
 </div>
 
@@ -412,35 +346,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

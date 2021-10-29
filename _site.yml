@@ -10,9 +10,11 @@ navbar:
     - text: "Dashboard"
       href: dashboard.html
     - icon: fa-envelope fa-lg
-      href: mailto:<you@youremail.com>
+      href: mailto:<zheyan.liu@columbia.edu>
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/zheyanliu999/
     - icon: fa-github fa-lg
-      href: http://github.com/bst-p8105/
+      href: https://github.com/zheyanliu99
 output:
   html_document:
     theme: cosmo
