@@ -1,23 +1,34 @@
 ---
-title: "My awesome website"
+title: "Zheyan Liu"
 output: 
   html_document:
-    toc: true
-    toc_float: true
+    includes:
+       in_header: ga_script.html
 ---
 
-# This is Jeff's awesome website
-
-![](https://media.giphy.com/media/drXGoW1iudhKw/giphy.gif)
-
-I can link to useful things like [google](https://www.google.com/) and [p8105](https://www.p8105.com)
+<link rel="stylesheet" href="academicons.css"/>
+<link rel="stylesheet" href="styles.css" type="text/css">
 
 
-I can make an extra page on my site and link to that. Here's my [about](about.html) page.
+### First-year Master of Science in Biostatistics
+### Columbia University, Mailman School of Public Health
+
+<br><img src="images/MeWithWhale.jpg" alt="julia" style="width:30%" class="center"><br>
+
+I obtained a BA in chemistry from [Swarthmore College](http://www.swarthmore.edu/) in 2010 and a PhD in biostatistics from [Columbia University](https://www.mailman.columbia.edu/become-student/departments/biostatistics) in 2019. My dissertation was advised by [Jeff Goldsmith](http://jeffgoldsmith.com/) and focused on methods for analyzing and visualizing functional data, with applications in wearable devices, structural MRI, and neurobiology. I joined the Colorado School of Public Health as an assistant professor in 2019.
+
+<br>
+
+#### Contact Information
+
+Julia Wrobel
+[Department of Biostatistics & Informatics](http://www.ucdenver.edu/academics/colleges/PublicHealth/Academics/departments/Biostatistics/Pages/welcome.aspx)  
+[Colorado School of Public Health](http://www.ucdenver.edu/academics/colleges/PublicHealth/Pages/default.aspx)  
+Building 500, Room W4137
+<br>
+13001 East 17th Place
+<br>
+Aurora, Colorado 80045
 
 
-## Here's Ted
-
-My cat's name is Ted. He likes to be on the internet. Here he is:
-
-<img src="images/ted.jpg" style="width:75%">
+Email: [julia.wrobel@cuanschutz.edu](mailto:julia.wrobel@cuanschutz.edu)  

@@ -8,14 +8,16 @@ navbar:
       href: experience.html
       
   right:
-    - text: "About"
-      href: about.html
-    - text: "Plotly"
-      href: plotly.html
-    - text: "Dashboard"
-      href: dashboard.html
+    # - text: "About"
+    #   href: about.html
+    # - text: "Plotly"
+    #   href: plotly.html
+    # - text: "Dashboard"
+    #   href: dashboard.html
     - icon: fa-envelope fa-lg
       href: mailto:<zheyan.liu@columbia.edu>
+    - icon: fa-address-book fa-lg
+      href: ./resources/Liu.Zheyan.Resume.pdf
     - icon: fa-linkedin fa-lg
       href: https://www.linkedin.com/in/zheyanliu999/
     - icon: fa-github fa-lg
