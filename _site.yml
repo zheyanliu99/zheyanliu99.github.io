@@ -2,6 +2,11 @@ name: "Yay internet!"
 output_dir: "."
 navbar:
   title: "Home"
+  
+  left:
+      text: 'Experience'
+      href: experience.html
+      
   right:
     - text: "About"
       href: about.html
@@ -15,6 +20,8 @@ navbar:
       href: https://www.linkedin.com/in/zheyanliu999/
     - icon: fa-github fa-lg
       href: https://github.com/zheyanliu99
+      
+      
 output:
   html_document:
     theme: lumen
