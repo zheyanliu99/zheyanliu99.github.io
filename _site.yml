@@ -6,6 +6,8 @@ navbar:
   left:
     - text: 'Experience'
       href: experience.html
+    - text: 'DashBoard'
+      href: dashboard.html
       
   right:
     # - text: "About"

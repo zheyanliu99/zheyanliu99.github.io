@@ -8,6 +8,8 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+rmarkdown::render("dashboard.Rmd", output_format = "flexdashboard::flex_dashboard")
+
 library(flexdashboard)
 library(tidyverse)
 library(p8105.datasets)
@@ -16,18 +18,13 @@ library(plotly)
 
 library(patchwork)
 
-knitr::opts_chunk$set(
-  fig.width = 6,
-  fig.asp = .6,
-  out.width = "95%"
-)
 
 theme_set(theme_minimal() + theme(legend.position = 'bottom'))
 
 options(
-  ggplot2.continuous.colour = 'viridis',
-  ggplot2.continuous.fill = 'viridis'
-)
+   ggplot2.continuous.colour = 'viridis',
+   ggplot2.continuous.fill = 'viridis'
+ )
 
 scale_colour_discrete = scale_colour_viridis_d
 scale_fill_discrete = scale_fill_viridis_d
@@ -35,7 +32,8 @@ scale_fill_discrete = scale_fill_viridis_d
 set.seed(777)
 ```
 
-```{r Prepare data}
+```{r Prepare data, echo = FALSE, warning = FALSE, message = FALSE}
+
 data(ny_noaa)
 # data(nyc_airbnb)
 
@@ -54,7 +52,7 @@ ny_noaa =
          tmin = as.double(tmin)/10) %>% 
   rename(station_id = id)
   
-ny_noaa
+# ny_noaa
 
 
 ```
@@ -64,7 +62,7 @@ Column {data-width=650}
 
 ### Chart A
 
-```{r Scores by month and cuisine_description}
+```{r Scores by month and cuisine_description, echo = FALSE, warning = FALSE, message = FALSE}
 mean_tmin_df = 
   ny_noaa %>% 
   mutate(year = lubridate::year(date)) %>% 
@@ -86,7 +84,7 @@ Column {data-width=350}
 
 ### Chart B
 
-```{r}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 
 ny_noaa %>% 
   mutate(month = lubridate::month(date),
@@ -107,7 +105,7 @@ ny_noaa %>%
 
 ### Chart C
 
-```{r}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
 
 ny_noaa %>% 
   mutate(month = lubridate::month(date),
