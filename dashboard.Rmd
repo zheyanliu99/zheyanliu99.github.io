@@ -7,32 +7,31 @@ output:
     source_code: embed
 ---
 
-```{r setup, include=FALSE}
-rmarkdown::render("dashboard.Rmd", output_format = "flexdashboard::flex_dashboard")
+```{r setup2, include=FALSE}
 
 library(flexdashboard)
-library(tidyverse)
-library(p8105.datasets)
+# library(dplyr)
+# library(magrittr)
 
+# library(plotly)
+
+# library(patchwork)
+
+# library(ggplot2)
+
+# Set a seed
+# set.seed(777)
+library(p8105.datasets)
+library(tidyverse)
+library(dplyr)
 library(plotly)
 
-library(patchwork)
-
-
-theme_set(theme_minimal() + theme(legend.position = 'bottom'))
-
-options(
-   ggplot2.continuous.colour = 'viridis',
-   ggplot2.continuous.fill = 'viridis'
- )
-
-scale_colour_discrete = scale_colour_viridis_d
-scale_fill_discrete = scale_fill_viridis_d
-# Set a seed
-set.seed(777)
 ```
 
+
+
 ```{r Prepare data, echo = FALSE, warning = FALSE, message = FALSE}
+# library(ggplot2)
 
 data(ny_noaa)
 # data(nyc_airbnb)
@@ -43,48 +42,45 @@ year_filter = '2017'
 ny_noaa = 
   ny_noaa %>% 
   janitor::clean_names() %>% 
-  # Pick 4 stations with few missing values
-  filter(
-    id %in% c('USC00300055', 'USC00301401', 'USC00303025')
-  ) %>%  
+  # Pick 5 stations with few missing values
+  filter(id %in% c('USC00300055', 'USC00301401', 'USC00303025', 'USC00300889', 'USC00303346')) %>%  
   drop_na() %>% 
   mutate(tmax = as.double(tmax)/10,
          tmin = as.double(tmin)/10) %>% 
-  rename(station_id = id)
-  
-# ny_noaa
-
+  rename(station_id = id) 
 
 ```
 
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Mean Min-temperature (celsius) by year
 
-```{r Scores by month and cuisine_description, echo = FALSE, warning = FALSE, message = FALSE}
+```{r Mean_tmin by Year, echo = FALSE, warning = FALSE, message = FALSE}
+# library(plotly)
 mean_tmin_df = 
   ny_noaa %>% 
   mutate(year = lubridate::year(date)) %>% 
   group_by(year, station_id) %>% 
   summarise(mean_tmin = mean(tmin))
-  # plot_ly(
-  #   x = ~year, y = ~mean_tmin, type = "scatter", mode = "markers",
-  #   color = ~station_id) +
-  # theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
 Boxplot = 
   ggplot(mean_tmin_df, aes(x = year, y = mean_tmin, color = station_id)) + 
-  geom_line()
+  geom_line() +
+  ylab('Mean Min-temperature (celsius)') +
+  theme_minimal() 
 
-ggplotly(Boxplot)
+
+# ggplotly(Boxplot)
+ggplotly(Boxplot) 
 ```
 
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Daily temperature difference (celsius) Boxplot by season
 
-```{r, echo = FALSE, warning = FALSE, message = FALSE}
+```{r ggplotly boxplot , echo = FALSE, warning = FALSE, message = FALSE}
 
 ny_noaa %>% 
   mutate(month = lubridate::month(date),
@@ -97,13 +93,15 @@ ny_noaa %>%
          ),
          season = fct_reorder(season, month, max),
          temperature_diff = tmax - tmin) %>% 
-  filter(year >= 2000) %>% 
+  filter(year >= 2000,
+         temperature_diff > 0) %>% 
   
-  plot_ly(y = ~temperature_diff, color = ~season, type = "box", colors = "viridis")
+  plot_ly(y = ~temperature_diff, color = ~season, type = "box", colors = "viridis") %>% 
+    layout(yaxis = list(title = "Daily temperature difference (celsius)"))
 
 ```
 
-### Chart C
+### Mean Min-temperature(celsius) by Month and color by mean Precipitation (mm)
 
 ```{r, echo = FALSE, warning = FALSE, message = FALSE}
 
@@ -112,10 +110,21 @@ ny_noaa %>%
          year = lubridate::year(date)) %>% 
   filter(year >= 2000) %>% 
   group_by(month) %>% 
-  summarise(mean_prcp = mean(prcp),
+  summarise(Mean_Prec_mm = mean(prcp)/10,
             mean_tmin = mean(tmin)) %>% 
-  plot_ly(x = ~month, y = ~mean_prcp, color = ~mean_tmin, type = "bar", colors = "Blues")
-
+  plot_ly(x = ~month, y = ~mean_tmin, color = ~Mean_Prec_mm, type = "bar", colors = "Blues") %>% 
+    # Change ticks  
+    layout(
+      # legend = list(title=list(text='Mean Precipitation (mm)')), 
+      xaxis = list(
+        dtick = 1, 
+        tick0 = 1, 
+        tickmode = "linear"),
+      yaxis = list(title = "Mean Min-temperature (celsius)")
+    )
+  
+    
+# rmarkdown::render("dashboard.Rmd", output_format = "flexdashboard::flex_dashboard")
 
 ```
 
