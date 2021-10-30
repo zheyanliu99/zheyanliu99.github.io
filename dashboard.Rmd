@@ -13,21 +13,50 @@ library(tidyverse)
 library(p8105.datasets)
 
 library(plotly)
+
+library(patchwork)
+
+knitr::opts_chunk$set(
+  fig.width = 6,
+  fig.asp = .6,
+  out.width = "95%"
+)
+
+theme_set(theme_minimal() + theme(legend.position = 'bottom'))
+
+options(
+  ggplot2.continuous.colour = 'viridis',
+  ggplot2.continuous.fill = 'viridis'
+)
+
+scale_colour_discrete = scale_colour_viridis_d
+scale_fill_discrete = scale_fill_viridis_d
+# Set a seed
+set.seed(777)
 ```
 
-```{r}
-data("nyc_airbnb")
+```{r Prepare data}
+data(ny_noaa)
+# data(nyc_airbnb)
 
-nyc_airbnb = 
-  nyc_airbnb %>% 
-  mutate(stars = review_scores_location / 2) %>% 
-  select(neighbourhood_group, neighbourhood, stars, price, room_type, lat, long) %>% 
+year_filter = '2017'
+
+
+ny_noaa = 
+  ny_noaa %>% 
+  janitor::clean_names() %>% 
+  # Pick 4 stations with few missing values
   filter(
-    neighbourhood_group == "Manhattan",
-    room_type == "Entire home/apt",
-    price %in% 100:500
-  ) %>% 
-  drop_na(stars)
+    id %in% c('USC00300055', 'USC00301401', 'USC00303025')
+  ) %>%  
+  drop_na() %>% 
+  mutate(tmax = as.double(tmax)/10,
+         tmin = as.double(tmin)/10) %>% 
+  rename(station_id = id)
+  
+ny_noaa
+
+
 ```
 
 Column {data-width=650}
@@ -35,15 +64,21 @@ Column {data-width=650}
 
 ### Chart A
 
-```{r}
-nyc_airbnb %>% 
-  mutate(
-    text_label = str_c("Price: $", price, "\nStars: ", stars)
-  ) %>% 
-  plot_ly(
-    x = ~lat, y = ~long, type = "scatter", mode = "markers",
-    color = ~price, text = ~text_label, alpha = .5
-  )
+```{r Scores by month and cuisine_description}
+mean_tmin_df = 
+  ny_noaa %>% 
+  mutate(year = lubridate::year(date)) %>% 
+  group_by(year, station_id) %>% 
+  summarise(mean_tmin = mean(tmin))
+  # plot_ly(
+  #   x = ~year, y = ~mean_tmin, type = "scatter", mode = "markers",
+  #   color = ~station_id) +
+  # theme(axis.text.x = element_text(angle = 90, hjust = 1))
+Boxplot = 
+  ggplot(mean_tmin_df, aes(x = year, y = mean_tmin, color = station_id)) + 
+  geom_line()
+
+ggplotly(Boxplot)
 ```
 
 Column {data-width=350}
@@ -52,21 +87,37 @@ Column {data-width=350}
 ### Chart B
 
 ```{r}
-nyc_airbnb %>%
-  mutate(
-    neighbourhood = fct_reorder(neighbourhood, price)
-  ) %>% 
-  plot_ly(
-    y = ~ price, color = ~neighbourhood, type = "box",
-    colors = "viridis")
+
+ny_noaa %>% 
+  mutate(month = lubridate::month(date),
+         year = lubridate::year(date),
+         season = case_when(
+           month > 2 & month <= 5 ~ 'Spring',
+           month > 5 & month <= 8 ~ 'Summer',
+           month > 8 & month <= 11 ~ 'Autumn',
+           TRUE ~ 'Winter'
+         ),
+         season = fct_reorder(season, month, max),
+         temperature_diff = tmax - tmin) %>% 
+  filter(year >= 2000) %>% 
+  
+  plot_ly(y = ~temperature_diff, color = ~season, type = "box", colors = "viridis")
+
 ```
 
 ### Chart C
 
 ```{r}
-nyc_airbnb %>% 
-  count(neighbourhood) %>% 
-  mutate(neighbourhood = fct_reorder(neighbourhood, n)) %>% 
-  plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar", colors = "viridis")
+
+ny_noaa %>% 
+  mutate(month = lubridate::month(date),
+         year = lubridate::year(date)) %>% 
+  filter(year >= 2000) %>% 
+  group_by(month) %>% 
+  summarise(mean_prcp = mean(prcp),
+            mean_tmin = mean(tmin)) %>% 
+  plot_ly(x = ~month, y = ~mean_prcp, color = ~mean_tmin, type = "bar", colors = "Blues")
+
+
 ```
 

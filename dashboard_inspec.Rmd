@@ -1,0 +1,110 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source_code: embed
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+
+library(plotly)
+
+# Set a seed
+set.seed(777)
+```
+
+```{r Prepare data}
+data(rest_inspec)
+# data(nyc_airbnb)
+
+year_filter = '2017'
+
+rest_inspec_sample = 
+  rest_inspec %>% 
+    janitor::clean_names() %>% 
+    # Only keep the restaurant inspected in 2017, in Manhatten and the first inspection
+    mutate(inspect_year = format(inspection_date, format = "%Y")) %>% 
+    filter(inspect_year == year_filter,
+           inspection_type == 'Cycle Inspection / Initial Inspection',
+           boro == 'MANHATTAN') %>% 
+    # Remove repeated restaurant, keep the last
+    arrange(inspection_date) %>% 
+    distinct(camis, .keep_all = TRUE) %>% 
+    # Select some variables
+    select(boro, cuisine_description, inspection_date, critical_flag, score) %>% 
+    rename(cuisine= cuisine_description) %>% 
+    # Remove NAN
+    drop_na() %>% 
+    # Take a sample of 5000
+    sample_n(5000)
+  
+rest_inspec_sample
+
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r Scores by month and cuisine_description}
+# Top 10 list
+Top10_cuisine = 
+  rest_inspec_sample %>% 
+    # Select only top 10
+    group_by(cuisine) %>% 
+    summarise(cnt = n()) %>% 
+    # show only top 10
+    slice_max(cnt, n = 10) %>% 
+    ungroup() %>% 
+    pull(cuisine)
+
+rest_inspec_sample %>% 
+  # Select only Top 10
+  filter(cuisine %in% Top10_cuisine) %>% 
+  mutate(
+    inspect_month = as.factor(lubridate::month(inspection_date))
+    # text_label = str_c("Price: $", price, "\nStars: ", stars)
+  ) %>%
+  group_by(inspect_month, cuisine) %>% 
+  summarise(total_restaurants = n(),
+            mean_score = mean(score)) %>% 
+  filter(total_restaurants > 5) %>% 
+  plot_ly(
+    x = ~inspect_month, y = ~mean_score, type = 'scatter', mode = 'markers', color = 'cuisine', alpha = 1
+  ) 
+
+rest_inspec_sample %>% 
+
+Top10_cuisine
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+nyc_airbnb %>%
+  mutate(
+    neighbourhood = fct_reorder(neighbourhood, price)
+  ) %>% 
+  plot_ly(
+    y = ~ price, color = ~neighbourhood, type = "box",
+    colors = "viridis")
+```
+
+### Chart C
+
+```{r}
+nyc_airbnb %>% 
+  count(neighbourhood) %>% 
+  mutate(neighbourhood = fct_reorder(neighbourhood, n)) %>% 
+  plot_ly(x = ~neighbourhood, y = ~n, color = ~neighbourhood, type = "bar", colors = "viridis")
+```
+
