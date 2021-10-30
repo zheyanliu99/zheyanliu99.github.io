@@ -10,25 +10,22 @@ output:
 <link rel="stylesheet" href="styles.css" type="text/css">
 
 
-### First-year Master of Science in Biostatistics
-### Columbia University, Mailman School of Public Health
+#### First-year student in MS Biostatistics
+#### Columbia University, Mailman School of Public Health
 
 <br><img src="images/MeWithWhale.jpg" alt="julia" style="width:30%" class="center"><br>
 
-I obtained a BA in chemistry from [Swarthmore College](http://www.swarthmore.edu/) in 2010 and a PhD in biostatistics from [Columbia University](https://www.mailman.columbia.edu/become-student/departments/biostatistics) in 2019. My dissertation was advised by [Jeff Goldsmith](http://jeffgoldsmith.com/) and focused on methods for analyzing and visualizing functional data, with applications in wearable devices, structural MRI, and neurobiology. I joined the Colorado School of Public Health as an assistant professor in 2019.
+I obtained a BS in Statistics from [Shanghai University of Finance and Economics](https://english.sufe.edu.cn/) in 2021 and I am currenly pursuing a MS in Biostatistics (Data Science Track) from [Columbia University](https://www.mailman.columbia.edu/become-student/departments/biostatistics). My undergraduate dissertation was advised by [FengXin Dong](https://ssm.sufe.edu.cn/31/13/c716a143635/page.htm) and focused on sentiment classification of text data during COVID19. I love Data Science and my career goal is to help adapt Data Science in healthcare industry. Now I am actively looking for **2022 summer internship** and **reseach assistant** related to Data Science.
 
 <br>
 
 #### Contact Information
 
-Julia Wrobel
-[Department of Biostatistics & Informatics](http://www.ucdenver.edu/academics/colleges/PublicHealth/Academics/departments/Biostatistics/Pages/welcome.aspx)  
-[Colorado School of Public Health](http://www.ucdenver.edu/academics/colleges/PublicHealth/Pages/default.aspx)  
-Building 500, Room W4137
+[Department of Biostatistics](http://www.mailman.columbia.edu/academic-departments/biostatistics)  
+[Columbia Mailman School of Public Health](http://www.mailman.columbia.edu/)  
+100 Haven Ave
 <br>
-13001 East 17th Place
-<br>
-Aurora, Colorado 80045
+New York, New York 10032  
 
 
-Email: [julia.wrobel@cuanschutz.edu](mailto:julia.wrobel@cuanschutz.edu)  
+Email: [zheyan.liu@columbia.edu](mailto:zheyan.liu@columbia.edu)  
