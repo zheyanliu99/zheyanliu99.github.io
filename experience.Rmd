@@ -1,5 +1,5 @@
 ---
-title: "Experience"
+title: "Zheyan Liu"
 output: 
   html_document:
     includes:
@@ -9,20 +9,92 @@ output:
 <link rel="stylesheet" href="academicons.css"/>
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-### Curve Registration
+<br>
+<br>
 
-I developed a method to **register exponential family functional data**, which was recently published in [Biometrics](https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.12963). Our methods are implemented in the `registr` package, a GitHub hosted `R` package you can download [here](https://github.com/julia-wrobel/registr).
 
-If each curve represents an observation for one subject, then _curve registration_ refers to warping the domain (often time) of a set of curves so that the main features of each curve are aligned across subjects. An example with simulated data is below.
+### EDUCATION                                                                                               
 
-<br><img src="images/registration.png" alt="registration" style="width:75%"><br>
+**Columbia University - Mailman School of Public Health** <div style="text-align: right"> *May 2023* </div>                    
 
-_Warping functions_ (center) are applied to the _unregistered curves_ (left) to get _registered_ curves (right). The _exponential family_ part comes in because not all functional observations are Gaussian or continuous. Our approach to registration allows alignment of data that is discrete as well as continuous. 
+Master of Science in Biostatistics, Specialization in Data Science                                         
+Relevant Coursework: Data Science (R), Biostatistics Method
 
-Below our method is applied to accelerometer data where each subject's binary activity (active vs. not active) is collected at every minute over 24 hours. Periods of inactivity are colored in light blue and periods of activity are colored in dark blue. Applying our registration technique to the activity data pulls out patterns in physical activity.
 
-<br><img src="images/binaryRegistration.png" alt="binary registration" style="width:75%"><br>
+**Shanghai University of Finance and Economics (SUFE) - School of Statistics and Management**, China 	<div style="text-align: right"> *June 2021* </div>
 
-### Interactive visualization of functional data analyses
+Bachelor of Science Statistics                                                             			  
+Relevant Coursework: Data Mining (Python), Machine Learning, Computational Programming (C++), Mathematical Analysis, Probability, Advanced Mathematics, Regression Analysis (R, SAS), Random Process, Database Theory (SQL, C#), EDA (R)
 
-I also have software for communicating the results of functional data analyses. I made a poster on this work for the 2017 Women in Statistics and Data Science (WSDS) conference, which you can access [here](Downloads/output/flexdashboard-poster.html).
+<br>
+
+### PROFESSIONAL EXPERIENCE        
+
+**Ping An Technology (Shenzhen) Co. LTD** , Shanghai, China 					<div style="text-align: right"> *April 2021 – July 2021* </div>   
+
+**Data Scientist Intern**                   
+
+* Used PySpark and SQL to query data, and conduct data mining on user behavior based on business insights 
+*	Optimized feature engineering codes to improve efficiency and complete modeling preparations for core projects
+*	Use LightGBM, XGBoost and other methods to establish underwriting models (auto insurance, property insurance); Research the feasibility of implementing the GNN auto insurance anti-fraud model
+
+
+**Shengqu Information Technology (Shanghai) Co. Ltd** , Shanghai, China  <div style="text-align: right"> *October 2020 – April 2021 * </div>
+
+**Data Analyst Intern**         
+
+*	Responded to data analysis demands of the operation department related to a popular mobile game, using Hive/Spark to query data and produce automatic data report with Plotly on Python and Tableau
+*	Conducted research on user payment/loss issues to provide data-driven decision support for the operation teams
+*	Ensembled XGBoost, Random Forest to predict if the user will churn with AUC 0.92
+
+
+**Hylink Digital Solution Co. Ltd Shanghai Office**, Shanghai, China 			        
+
+<div style="text-align: right"> *August 2020 – October 2020* </div>
+
+**Data Analyst Intern**
+
+*	Wrote Python code to update daily/weekly report and built a new data dashboard on Excel to demonstrate performance of campaign to our client (PayPal) with convenience
+*	Undertake exploratory data analysis (using Python and Tableau) towards weekly campaign data on several media such as Baidu and Google to offer business insights to our client
+
+<br>
+
+### ACADEMIC EXPERIENCE
+
+**Sentiment Analysis of Covid19 Internet Public Opinions | (Graduation Thesis)**, Shanghai, China      
+
+<div style="text-align: right"> *April 2021 – May 2021*  </div>
+
+*	Performed exploratory data analysis based on the text data related to the epidemic situation in Weibo. 
+*	Used methods such as back translation, Bert synonymous replacement, and random replacement for data strengthen.
+*	Establish and tune BERT and FastText-based SVM and XGBoost models to predict sentiment tendency with AUC 0.89 
+*	Applied voting model to the crawled epidemic-related Weibo data, and analyzed online public opinion of Covid
+
+
+**Empirical Covid19 and market volatility | Research Assistant**, Shanghai, China 			   
+
+<div style="text-align: right"> *April 2020 – June 2021*  </div>
+
+*	Determined value for each parameter in SEIRD model through reading plenty of related papers and found the underlying relationship with each variable
+*	Programmed using Python to simulate data under seven different circumstances
+*	Recorded findings and optimized scripts to simulate data efficiently and increase detailed markdown and annotation
+*	Conducted sensitivity test on parameters to give Covid-control policy suggestions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
