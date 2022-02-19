@@ -13,13 +13,13 @@ output:
 
 ### EDUCATION                                                                                               
 
-**Columbia University - Mailman School of Public Health** <div style="text-align: right"> *May 2023* </div>                    
+**Columbia University - Mailman School of Public Health**  [*Expected May 2023*]{style="float:right"}                  
 
 Master of Science in Biostatistics, Specialization in Data Science                                         
 Relevant Coursework: Introduction to Database, Data Science (R), Biostatistics Method
 
 
-**Shanghai University of Finance and Economics (SUFE) - School of Statistics and Management**, China 	<div style="text-align: right"> *June 2021* </div>
+**Shanghai University of Finance and Economics (SUFE) - School of Statistics and Management**, China 	[*June 2021*]{style="float:right"} 
 
 Bachelor of Science Statistics                                                             			  
 Relevant Coursework: Data Mining (Python), Machine Learning, Computational Programming (C++), Mathematical Analysis, Probability, Advanced Mathematics, Regression Analysis (R, SAS), Random Process, Database Theory (SQL, C#), EDA (R)
@@ -56,7 +56,7 @@ Relevant Coursework: Data Mining (Python), Machine Learning, Computational Progr
 
 ### PROJECT EXPERIENCE
 
-[**New York Times Best-seller Book Pipeline| Team Leader**](https://github.com/zheyanliu99/NewYorkTimes-bestseller-book-pipeline.git), New York, United States  [*Dec 2021 – Jan 2022*]{style="float:right"}	  
+[**New York Times Best-seller Book Pipeline| Team Leader**](https://github.com/zheyanliu99/NewYorkTimes-bestseller-book-pipeline.git), New York, United States  [*Feb 2022*]{style="float:right"}	  
 
 * Created DAG in Airflow to extract data from [NYTimes Books API](https://developer.nytimes.com/docs/books-product/1/routes/lists.json/get) and sent the results to customized email recipients weekly.
 *	Transformed and cleaned the format of the extracted data and containerized the project with Docker
