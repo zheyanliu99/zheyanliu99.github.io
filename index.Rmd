@@ -16,14 +16,14 @@ output:
 <br>
 <center>
 
-![](images/MeWithWhale.jpg){width=30%}
+![](images/zheyan2.jpg){width=30%}
 
 </center>
 <br>
 
 <!-- <br><img src="images/MeWithWhale.jpg" alt="ZheyanWithWhale" style="width:30%" class="center"><br> -->
 
-I obtained a BS in Statistics from [Shanghai University of Finance and Economics](https://english.sufe.edu.cn/) in 2021 and I am currenly pursuing a MS in Biostatistics (Data Science Track) from [Columbia University](https://www.mailman.columbia.edu/become-student/departments/biostatistics). My undergraduate dissertation was advised by [FengXin Dong](https://ssm.sufe.edu.cn/31/13/c716a143635/page.htm) and focused on sentiment classification of text data during COVID19. I love Data Science and my career goal is to help adapt Data Science in healthcare industry. Now I am actively looking for **2022 summer internship** and **reseach assistant** related to Data Science/Data Engineer.
+I obtained a BS in Statistics from [Shanghai University of Finance and Economics](https://english.sufe.edu.cn/) in 2021 and I am currenly pursuing a MS in Biostatistics (Data Science Track) from [Columbia University](https://www.mailman.columbia.edu/become-student/departments/biostatistics). My undergraduate dissertation was advised by [FengXin Dong](https://ssm.sufe.edu.cn/31/13/c716a143635/page.htm) and focused on sentiment classification of text data during COVID19. I love Data Science and my career goal is to help adapt Data Science in healthcare industry. Now I am actively looking for **2022 summer internship** and **reseach assistant** related to Data Engineer/Data Science
 
 <br>
 

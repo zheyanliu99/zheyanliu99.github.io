@@ -256,6 +256,9 @@ $(document).ready(function () {
         <li>
   <a href="experience.html">Experience</a>
 </li>
+<li>
+  <a href="dashboard.html">DashBoard</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -297,7 +300,7 @@ $(document).ready(function () {
 
 
 <p><link rel="stylesheet" href="academicons.css"/> <link rel="stylesheet" href="styles.css" type="text/css"></p>
-<p><br> <br></p>
+<p><br></p>
 <div id="education" class="section level3">
 <h3>EDUCATION</h3>
 <strong>Columbia University - Mailman School of Public Health</strong>
@@ -305,7 +308,7 @@ $(document).ready(function () {
 <em>May 2023</em>
 </div>
 <p>Master of Science in Biostatistics, Specialization in Data Science<br />
-Relevant Coursework: Data Science (R), Biostatistics Method</p>
+Relevant Coursework: Introduction to Database, Data Science (R), Biostatistics Method</p>
 <strong>Shanghai University of Finance and Economics (SUFE) - School of Statistics and Management</strong>, China
 <div style="text-align: right">
 <em>June 2021</em>
@@ -316,58 +319,61 @@ Relevant Coursework: Data Mining (Python), Machine Learning, Computational Progr
 </div>
 <div id="professional-experience" class="section level3">
 <h3>PROFESSIONAL EXPERIENCE</h3>
-<strong>Ping An Technology (Shenzhen) Co. LTD</strong> , Shanghai, China
-<div style="text-align: right">
-<em>April 2021 – July 2021</em>
-</div>
-<p><strong>Data Scientist Intern</strong></p>
+<p><strong>Ping An Technology | Data Scientist Intern</strong> , Shanghai, China <span style="float:right"><em>April 2021 – July 2021</em></span></p>
 <ul>
-<li>Used PySpark and SQL to query data, and conduct data mining on user behavior based on business insights</li>
-<li>Optimized feature engineering codes to improve efficiency and complete modeling preparations for core projects</li>
-<li>Use LightGBM, XGBoost and other methods to establish underwriting models (auto insurance, property insurance); Research the feasibility of implementing the GNN auto insurance anti-fraud model</li>
+<li>Implemented and deployed of data pipelines, data models, and ETL processes with PySpark in Apache Zeppelin</li>
+<li>Optimized web crawlers code and feature engineering process; improved efficiency by 40%</li>
+<li>Used LightGBM, XGBoost to predict if customer will renew auto insurance and health insurance with AUC 0.93; researched the feasibility of implementing the GNN auto insurance anti-fraud model</li>
 </ul>
-<strong>Shengqu Information Technology (Shanghai) Co. Ltd</strong> , Shanghai, China
-<div style="text-align: right">
-<em>October 2020 – April 2021 </em>
-</div>
-<p><strong>Data Analyst Intern</strong></p>
+<p><strong>Shengqu Games | Data Analyst Intern</strong> , Shanghai, China <span style="float:right"><em>October 2020 – April 2021 </em></span></p>
 <ul>
-<li>Responded to data analysis demands of the operation department related to a popular mobile game, using Hive/Spark to query data and produce automatic data report with Plotly on Python and Tableau</li>
-<li>Conducted research on user payment/loss issues to provide data-driven decision support for the operation teams</li>
-<li>Ensembled XGBoost, Random Forest to predict if the user will churn with AUC 0.92</li>
+<li>Reduced reporting time from hours to seconds by using SQL and Python to query data and automate reporting</li>
+<li>Researched on user payment/churn issues and provide in-depth data reports to the game planner teams with Tableau and Plotly</li>
+<li>Predicted user churn with AUC 0.92 using Kmeans, RFM analysis, and an ensembled model of XGBoost and Random Forest</li>
 </ul>
-<p><strong>Hylink Digital Solution Co. Ltd Shanghai Office</strong>, Shanghai, China</p>
-<div style="text-align: right">
-<em>August 2020 – October 2020</em>
-</div>
-<p><strong>Data Analyst Intern</strong></p>
+<p><strong>Hylink Digital Solution | Data Analyst Intern</strong>, Shanghai, China <span style="float:right"><em>August 2020 – October 2020</em></span></p>
 <ul>
 <li>Wrote Python code to update daily/weekly report and built a new data dashboard on Excel to demonstrate performance of campaign to our client (PayPal) with convenience</li>
 <li>Undertake exploratory data analysis (using Python and Tableau) towards weekly campaign data on several media such as Baidu and Google to offer business insights to our client</li>
 </ul>
 <p><br></p>
 </div>
-<div id="academic-experience" class="section level3">
-<h3>ACADEMIC EXPERIENCE</h3>
-<p><strong>Sentiment Analysis of Covid19 Internet Public Opinions | (Graduation Thesis)</strong>, Shanghai, China</p>
-<div style="text-align: right">
-<em>April 2021 – May 2021</em>
-</div>
+<div id="project-experience" class="section level3">
+<h3>PROJECT EXPERIENCE</h3>
+<p><a href="https://github.com/zheyanliu99/NewYorkTimes-bestseller-book-pipeline.git"><strong>New York Times Best-seller Book Pipeline| Team Leader</strong></a>, New York, United States <span style="float:right"><em>Dec 2021 – Jan 2022</em></span></p>
+<ul>
+<li>Created DAG in Airflow to extract data from <a href="https://developer.nytimes.com/docs/books-product/1/routes/lists.json/get">NYTimes Books API</a> and sent the results to customized email recipients weekly.</li>
+<li>Transformed and cleaned the format of the extracted data and containerized the project with Docker</li>
+</ul>
+<p><a href="https://github.com/zheyanliu99/Covid_reporting.git"><strong>Azure Data Factory Project on Covid19 Reporting| Team Leader</strong></a>, New York, United States <span style="float:right"><em>Dec 2021 – Jan 2022</em></span></p>
+<ul>
+<li>Created Data Flows to ingest and transform data from sources as HTTP; Scheduled pipelines with triggers to update daily</li>
+<li>Leveraged Azure Monitor and Log Analytics to monitor pipelines and used Power BI to build a reporting dashboard</li>
+</ul>
+<p><a href="https://zheyanliu99.github.io/SubwayCrime/"><strong>NYC Subway Crime GNN Prediction and Application | Team Leader</strong></a>, New York, United States <span style="float:right"><em>Nov 2021 – Dec 2021</em></span></p>
+<ul>
+<li>Cleaned and imputed 10 years of New York City subway passenger data; Built project website and organized report</li>
+<li>Conducted EDA on subway passenger flow and location; Clustering station coordinates into 8 clusters with K-means</li>
+<li>Built <a href="https://zheyanliu.shinyapps.io/NYC_subway_findroute/">Crime-free Subway Route Identification Rshiny App</a> based on Google Map Api and adapted GNN to predict crime in each route</li>
+</ul>
+<p><a href="https://drive.google.com/file/d/1MnkX2jXGbPo4bRh-x2iJsHJWTOl1W9HY/view?usp=sharing"><strong>Sentiment Analysis of Covid19 Internet Public Opinions | (Graduation Thesis)</strong></a>, Shanghai, China <span style="float:right"><em>April 2021 – May 2021</em></span></p>
 <ul>
 <li>Performed exploratory data analysis based on the text data related to the epidemic situation in Weibo.</li>
 <li>Used methods such as back translation, Bert synonymous replacement, and random replacement for data strengthen.</li>
 <li>Establish and tune BERT and FastText-based SVM and XGBoost models to predict sentiment tendency with AUC 0.89</li>
 <li>Applied voting model to the crawled epidemic-related Weibo data, and analyzed online public opinion of Covid</li>
 </ul>
-<p><strong>Empirical Covid19 and market volatility | Research Assistant</strong>, Shanghai, China</p>
-<div style="text-align: right">
-<em>April 2020 – June 2021</em>
-</div>
+<p><strong>Empirical Covid19 and market volatility | Research Assistant</strong>, Shanghai, China <span style="float:right"><em>April 2020 – June 2021</em></span></p>
 <ul>
-<li>Determined value for each parameter in SEIRD model through reading plenty of related papers and found the underlying relationship with each variable</li>
+<li>Determined value for each parameter in SEIRD model through reading plenty of related papers and found the underlying relationship within variables</li>
 <li>Programmed using Python to simulate data under seven different circumstances</li>
 <li>Recorded findings and optimized scripts to simulate data efficiently and increase detailed markdown and annotation</li>
 <li>Conducted sensitivity test on parameters to give Covid-control policy suggestions</li>
+</ul>
+<p><strong>Design of Database for SUFE Volunteer Management System | Team Leader</strong>, Shanghai, China <span style="float:right"><em>Nov 2019 – Jan 2020</em></span></p>
+<ul>
+<li>Co-analyzed needs of project, drawn E-R diagram to optimize data model and used SQL Server to establish database</li>
+<li>Developed user platform with C# Windows Forms to interact with database and responsible for testing and debug</li>
 </ul>
 </div>
 
